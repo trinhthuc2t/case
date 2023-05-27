@@ -24,7 +24,7 @@ function save() {
         address;
         gender;
 
-        constructor(name, mssv, email, phone, address, gander) {
+        constructor(name, mssv, email, phone, address, gender) {
             this.name = name;
             this.id = mssv;
             this.email = email;
@@ -96,45 +96,29 @@ function save() {
     let list = new Student(fullName, mssv, email, phone, address, gender);
     arr.push(list);
     console.log(arr);
+    disPlay(arr);
 }
 
-
-console.log(save());
-disPlay(arr);
-
-
 function disPlay(arr) {
+    let table = `
+    `;
 
-    let table = `<h3>Danh sách HS/SV</h3>
- <table width="1000" border="1" cellspacing="0" cellpadding="0" class="table-list">
-     <tr>
-         <th>STT</th>
-         <th>Họ và tên</th>
-         <th>Mã số HS/SV</th>
-         <th>Email</th>
-         <th>Số điện thoại</th>
-         <th>Địa chỉ</th>
-         <th>Giới tính</th>
-         <th>Thay đổi</th>
-     </tr>
-     `;
     for (let i = 0; i < arr.length; i++) {
-        let listStudent = table + `
-     <tr>
-             <td>${arr[i].getName()}</td>
-             <td>${arr[i].getId()}</td>
-             <td>${arr[i].getEmail()}</td>
-             <td>${arr[i].getPhone()}</td>
-             <td>${arr[i].getAddress()}</td>
-             <td>${arr[i].getGender()}</td>
-             <td></td>
-</tr>
-</table>
+        let listStudent = `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${arr[i].getName()}</td>
+                <td>${arr[i].getId()}</td>
+                <td>${arr[i].getEmail()}</td>
+                <td>${arr[i].getPhone()}</td>
+                <td>${arr[i].getAddress()}</td>
+                <td>${arr[i].getGender()}</td>
+                <td></td>
+            </tr>
+        `;
+        table += listStudent;
+    }
 
-
-
-`;
-
-    }return listStudent
-    document.getElementById('list').innerHTML =listStudent;
+    table += `</table>`;
+    document.getElementById('list').innerHTML = table;
 }

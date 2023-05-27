@@ -16,7 +16,7 @@ div.form-student h3 {
 }
 div.form-student label {
     width: 100px;
-    float: left;
+    float: right;
 
 }
 div.form-student input , button {
@@ -38,7 +38,11 @@ div.list-student {
 div.list-student h3 {
     text-align: center;
 }
-table.table-list td{
+table.table-list th{
     background-color: gray;
+    text-align: center;
+}
+table.table-list td {
+    text-align: center;
 }
 
