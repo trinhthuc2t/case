@@ -92,21 +92,20 @@ function save() {
             this.gender = newGender;
         }
     }
+
     let list = new Student(fullName, mssv, email, phone, address, gender);
-    console.log(list);
+    arr.push(list);
+    console.log(arr);
 }
 
 
-//  arr.push(list);
+console.log(save());
+disPlay(arr);
 
-//  console.log(arr)
-/* disPlay(arr);
-
-}
 
 function disPlay(arr) {
 
- let table = `<h3>Danh sách HS/SV</h3>
+    let table = `<h3>Danh sách HS/SV</h3>
  <table width="1000" border="1" cellspacing="0" cellpadding="0" class="table-list">
      <tr>
          <th>STT</th>
@@ -119,21 +118,23 @@ function disPlay(arr) {
          <th>Thay đổi</th>
      </tr>
      `;
- for (let i = 0; i < arr.length; i++) {
-     let listStudent = table + `
+    for (let i = 0; i < arr.length; i++) {
+        let listStudent = table + `
      <tr>
-             <td>${Student.getName()}</td>
-             <td>${this.getId()}</td>
-             <td>${this.getEmail()}</td>
-             <td>${this.getPhone()}</td>
-             <td>${this.getAddress()}</td>
-             <td>${this.getGender()}</td>
+             <td>${arr[i].getName()}</td>
+             <td>${arr[i].getId()}</td>
+             <td>${arr[i].getEmail()}</td>
+             <td>${arr[i].getPhone()}</td>
+             <td>${arr[i].getAddress()}</td>
+             <td>${arr[i].getGender()}</td>
              <td></td>
 </tr>
 </table>
 
 
+
 `;
- }
+
+    }return listStudent
+    document.getElementById('list').innerHTML =listStudent;
 }
-*/
