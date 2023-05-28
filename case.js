@@ -140,7 +140,7 @@ function editStuden(i) {
     document.getElementById('phonenumber').value = Student.getPhone();
     document.getElementById('address').value = Student.getAddress();
     document.getElementById('edit').innerHTML = `
-    <button onclick="edit(${i})">Lưu lại
+    <button onclick="edit(${i})"style="background-color: yellow">Lưu lại
     `;
 
 }
@@ -165,7 +165,11 @@ function edit(index){
     arr[index].setAddress(newAddress);
     arr[index].setGander(newGender)
     disPlay(arr)
+    document.getElementById('edit').innerHTML = ``
 }
+
+
+console.log(arr);
 
 
 
