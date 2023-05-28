@@ -97,7 +97,7 @@ function disPlay(arr) {
     for (let i = 0; i < arr.length; i++) {
         let listStudent = `
             <tr>
-                <td>${i + 1}</td>
+                <td>${i+2}</td>
                 <td>${arr[i].getName()}</td>
                 <td>${arr[i].getId()}</td>
                 <td>${arr[i].getEmail()}</td>
