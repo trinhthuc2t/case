@@ -15,24 +15,28 @@ div.form-student h3 {
     margin-top: 0px;
 }
 div.form-student label {
-    width: 100px;
-    float: right;
+    width: 110px;
+    float: left;
 
 }
 div.form-student input , button {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     width: 200px;
     padding: 3px;
+    margin-right: 10px;
+    margin-top: 5px;
+
  }
 div.form-student input[type="radio"] {
-    width: 25px;
+    width: 15px;
+
 }
 div.form-student button {
     width: 320px;
     margin-top: 10px;
 }
-div.list-student {
-    width: 700px;
+div.list-student   {
+    width: 1030px;
     margin-right: 0px;
 }
 div.list-student h3 {
@@ -42,7 +46,19 @@ table.table-list th{
     background-color: gray;
     text-align: center;
 }
-table.table-list td {
+table.table-list td{
     text-align: center;
+
 }
+
+/*.form-student {
+    float: left;
+    width: 40%;
+}
+
+div.img-style {
+    float: right;
+}*/
+
+
 

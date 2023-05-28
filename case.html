@@ -7,12 +7,12 @@
 
 </head>
 <body>
-<h1 align="center">QUẢN LÝ HỌC VIÊN</h1>
 <div class="form-student">
-    <h3>Thông tin sinh viên</h3>
+    <h3>Thông tin HS/SV</h3>
     <label>
         Họ và tên:
     </label>
+
     <input type="text" id="fullname" placeholder="Họ và tên"><br>
     <label>
         Mã số HS/SV:
@@ -43,8 +43,12 @@
     <input type="radio" id="3" value="Other"> Khác <br>
 
     <button onclick="save()">Lưu lại</button>
+    <p id="edit"></p>
 
 </div>
+<!--<div>
+<img class="img-style" src="https://cdn.hanoi.codegym.vn/wp-content/uploads/sites/7/2022/07/trang-chu-6-scaled.webp" alt="ảnh" style="height: 400px;width: 600px">
+</div>-->
 <div class="list-student">
     <h3>Danh sách HS/SV</h3>
     <table width="1000" border="1" cellspacing="0" cellpadding="0" class="table-list">
@@ -58,7 +62,18 @@
             <th>Giới tính</th>
             <th>Thay đổi</th>
         </tr>
-        <tbody id="list"></tbody>
+        <tr>
+            <td>1</td>
+            <td>Tạ Thị Thùy</td>
+            <td>DTN0827465</td>
+            <td>tathuy@gmail.com</td>
+            <td>0948292241</td>
+            <td>Hà Nội</td>
+            <td>Nữ</td>
+            <td><button style="width: 50px">Delete</button>
+                <button style="width: 50px">Edit</button></td>
+
+        <tbody id="list" ></tbody>
     </table>
 
 

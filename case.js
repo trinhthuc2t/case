@@ -58,31 +58,30 @@ function save() {
 
         }
 
-        setName() {
+        setName(newName) {
             this.name = newName;
         }
 
-        setAge() {
+        setId(newMssv) {
             this.id = newMssv;
         }
 
-        setEmail() {
+        setEmail(newEmail) {
             this.email = newEmail;
         }
 
-        setPhone() {
+        setPhone(newPhone) {
             this.phone = newPhone;
         }
 
-        setAddress() {
+        setAddress(newAddress) {
             this.address = newAddress;
         }
 
-        setGander() {
+        setGander(newGender) {
             this.gender = newGender
 
         }
-
         edit(newName, newMssv, newEmail, newPhone, newAddress, newGender) {
             this.name = newName;
             this.id = newMssv;
@@ -91,6 +90,7 @@ function save() {
             this.address = newAddress;
             this.gender = newGender;
         }
+
     }
 
     let list = new Student(fullName, mssv, email, phone, address, gender);
@@ -113,7 +113,8 @@ function disPlay(arr) {
                 <td>${arr[i].getPhone()}</td>
                 <td>${arr[i].getAddress()}</td>
                 <td>${arr[i].getGender()}</td>
-                <td></td>
+                <td><button onclick="deleteStudent(${i})" style="width: 50px">Delete 
+                <button onclick="editStuden(${i})" style="width: 50px">Edit</button></td>
             </tr>
         `;
         table += listStudent;
@@ -121,4 +122,59 @@ function disPlay(arr) {
 
     table += `</table>`;
     document.getElementById('list').innerHTML = table;
+    document.getElementById('fullname').value = '';
+    document.getElementById('id').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phonenumber').value = '';
+    document.getElementById('address').value = '';
+    document.getElementById('1').checked = false
+    document.getElementById('2').checked = false
+    document.getElementById('3').checked = false
+
 }
+
+
+
+function deleteStudent(index) {
+ arr.splice(index,1);
+ disPlay(arr)
+}
+
+
+function editStuden(i) {
+    let Student = arr[i];
+    document.getElementById('fullname').value = Student.getName() ;
+    document.getElementById('id').value = Student.getId();
+    document.getElementById('email').value = Student.getEmail();
+    document.getElementById('phonenumber').value = Student.getPhone();
+    document.getElementById('address').value = Student.getAddress();
+    document.getElementById('edit').innerHTML = `
+    <button onclick="edit(${i})">Edit
+    `;
+
+}
+function edit(index){
+    let newName = document.getElementById('fullname').value;
+    let newMssv = document.getElementById('id').value;
+    let newEmail = document.getElementById('email').value;
+    let newPhone = document.getElementById('phonenumber').value;
+    let newAddress = document.getElementById('address').value;
+    let newGender = '';
+    if (document.getElementById('1').checked) {
+        newGender = document.getElementById('1').value;
+    } else if (document.getElementById('2').checked) {
+        newGender = document.getElementById('2').value;
+    } else if (document.getElementById('3').checked) {
+        newGender = document.getElementById('3').value;
+    }
+    arr[index].setName(newName);
+    arr[index].setId(newMssv);
+    arr[index].setPhone(newPhone);
+    arr[index].setEmail(newEmail);
+    arr[index].setAddress(newAddress);
+    arr[index].setGander(newGender)
+    disPlay(arr)
+}
+
+
+
