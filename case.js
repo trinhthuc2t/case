@@ -82,15 +82,6 @@ function save() {
             this.gender = newGender
 
         }
-        edit(newName, newMssv, newEmail, newPhone, newAddress, newGender) {
-            this.name = newName;
-            this.id = newMssv;
-            this.email = newEmail;
-            this.phone = newPhone;
-            this.address = newAddress;
-            this.gender = newGender;
-        }
-
     }
 
     let list = new Student(fullName, mssv, email, phone, address, gender);
@@ -149,7 +140,7 @@ function editStuden(i) {
     document.getElementById('phonenumber').value = Student.getPhone();
     document.getElementById('address').value = Student.getAddress();
     document.getElementById('edit').innerHTML = `
-    <button onclick="edit(${i})">Edit
+    <button onclick="edit(${i})">Lưu lại
     `;
 
 }
